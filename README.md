@@ -1,6 +1,5 @@
-This is the free version of [Karna Jekyll Theme](http://webjeda.com/karna-full/)
 
-Demo: [http://webjeda.com/karna](http://webjeda.com/karna)
+Demo: [https://aurora13.github.io/test.theme.io/](Demo)
 
 ## Installation
 * Fork the repository
