@@ -6,6 +6,7 @@ layout: default
     {% for post in site.posts %}
     <div class="box" style="background-color:#{{post.color}}">
        {% if post.img %}
+       {% assign url = post.url | prepend: site.url %}
        <img
         onclick="redirectURL({{post.url | prepend: site.baseurl}})" 
         class="feat-image" src={{ "/images/" | prepend: site.baseurl | append: post.img }} alt="{{post.title}}" />
@@ -13,11 +14,9 @@ layout: default
           <div class="container">
             <h4>{{post.title}}</h4>
             <p>{{post.description}}</p>
-            <p>site.url: {{site.url}}</p>
-            {% assign url = "{{post.url | prepend: site.url}}" %}
              <div 
                 class="action"
-                onclick="redirectURL('/who-is-karna/')"
+                onclick="redirectURL({{url}})"
             >
                 {{ post.date | date: '%B %d, %Y' }}
                  <a href="{{post.url | prepend: site.baseurl}}"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
@@ -30,9 +29,6 @@ layout: default
 </div>
 
 <script>
-    function redirectURL(url) {
-        console.log(url);
-        window.location.href = url;
-    }
+    function redirectURL(url) { window.location.href = url;}
 </script>
 <script src="{{site.baseurl}}/js/salvattore.min.js"></script>
